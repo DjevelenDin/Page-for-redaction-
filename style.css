@@ -1,0 +1,249 @@
+.container {
+  margin: 0 auto;
+  width: 1770px;
+}
+
+.first {
+  margin-right: 0.5rem !important;
+}
+
+.btn-toolbar {
+  padding: 30px;
+}
+
+header {
+  background: #666868;
+}
+
+.block__change {
+  justify-content: center;
+  display: flex;
+}
+
+.block__color {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block__color :nth-child(1) {
+  background: #0AA898;
+}
+
+.block__color :nth-child(2) {
+  background: #088F82;
+}
+
+.block__color :nth-child(3) {
+  background: #1FB56C;
+}
+
+.block__color :nth-child(4) {
+  background: #1A9A5E;
+}
+
+.block__color :nth-child(5) {
+  background: #2790DD;
+}
+
+.block__color :nth-child(6) {
+  background: #1F79B9;
+}
+
+.block__color :nth-child(7) {
+  background: #9A63B4;
+}
+
+.block__color :nth-child(8) {
+  background: #9A63B4;
+}
+
+.block__color :nth-child(9) {
+  background: #30475D;
+}
+
+.block__color :nth-child(10) {
+  background: #283D4E;
+}
+
+.block__color :nth-child(11) {
+  background: #F5BC06;
+}
+
+.block__color :nth-child(12) {
+  background: #F89A0C;
+}
+
+.block__color :nth-child(13) {
+  background: #ED811B;
+}
+
+.block__color :nth-child(14) {
+  background: #DB5B00;
+}
+
+.block__color :nth-child(15) {
+  background: #F25938;
+}
+
+.block__color :nth-child(16) {
+  background: #C84425;
+}
+
+.block__color :nth-child(17) {
+  background: #EAEEEF;
+}
+
+.block__color :nth-child(18) {
+  background: #BAC1C4;
+}
+
+.block__color :nth-child(19) {
+  background: #8FA1A2;
+}
+
+.block__color :nth-child(20) {
+  background: #7B898A;
+}
+
+.block__color :nth-child(21) {
+  background: #000000;
+}
+
+.color {
+  width: 55px;
+  height: 55px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid yellow;
+  cursor: pointer;
+}
+
+.block__image {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block__image .image {
+  width: 110px;
+  height: 80px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.sign {
+  width: 100%;
+}
+
+.input input,
+.input select {
+  width: 100%;
+}
+
+section {
+  background: #666868;
+}
+
+section .section-background {
+  background: #fff;
+}
+
+footer textarea {
+  width: 100%;
+  height: 600px;
+}
+
+.display {
+  display: none;
+}
+#blah{
+  display: none;
+}
+main {
+  height: 100vh;
+  background-size: 100%;
+}
+
+.text {
+  padding: 20px;
+  height: 100%;
+  background-size: cover;
+}
+
+.emailHelp {
+  display: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.through {
+  text-decoration: line-through;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex .block__left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex .block__right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex .block__right .block__first {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.flex .block__right .block__second {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.flex input,
+.flex select,
+.flex button {
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+  border: 1px solid #999;
+}
+
+.block__li {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.block__li input {
+  width: 100%;
+}

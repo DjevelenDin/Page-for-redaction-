@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Karantina:wght@400;700&family=Orelega+One&family=Roboto:wght@300;400;500;700&family=RocknRoll+One&family=Zen+Dots&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Test2</title>
+</head>
+
+<body>
+  <header id="header">
+    <div class="container">
+      <div class="block__change">
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+          <div class="btn-group" role="group" aria-label="Third group">
+            <button type="button" class="btn btn-secondary first" id="format" onclick="addFormat()"><i
+                class="bi bi-code-slash"></i></button>
+          </div>
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+            <button type="button" onclick="boldText()" id="bold" class="btn btn-secondary"><i
+                class="bi bi-type-bold"></i></button>
+            <button type="button" onclick="italicText()" id="italic" class="btn btn-secondary"><i
+                class="bi bi-type-italic"></i></button>
+            <button type="button" onclick="underlineText()" id="underline" class="btn btn-secondary"><i
+                class="bi bi-type-underline"></i></button>
+            <button type="button" onclick="throughText()" id="through" class="btn btn-secondary"><i
+                class="bi bi-type-strikethrough"></i></button>
+          </div>
+          <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <button type="button" id="left" onclick="leftText()" class="btn btn-secondary"><i
+                class="bi bi-text-left"></i></button>
+            <button type="button" id="center" onclick="centerText()" class="btn btn-secondary"><i
+                class="bi bi-text-center"></i></button>
+            <button type="button" id="right" onclick="rightText()" class="btn btn-secondary"><i
+                class="bi bi-text-right"></i></button>
+          </div>
+          <div class="btn-group mr-2" role="group" aria-label="First group">
+
+
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="bi bi-type"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" onclick="fontFamily(this)" style="font-family: Karantina;" href="#"
+                  data-family="Karantina">Karantina</a>
+                <a class="dropdown-item" onclick="fontFamily(this)" style="font-family: Orelega One ;" href="#"
+                  data-family="Orelega One">Orelega One</a>
+                <a class="dropdown-item" onclick="fontFamily(this)" style="font-family: Roboto;" href="#"
+                  data-family="Roboto">Roboto</a>
+                <a class="dropdown-item" onclick="fontFamily(this)" style="font-family: RocknRoll One;" href="#"
+                  data-family="RocknRoll One">RocknRoll One</a>
+                <a class="dropdown-item" onclick="fontFamily(this)" style="font-family: Zen Dots;" href="#"
+                  data-family="Zen Dots">Zen Dots</a>
+              </div>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropMeSize" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="bi bi-fonts"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropMeSize">
+                <a class="dropdown-item" onclick="fontSize(this)" style="font-size: 12px;" href="#"
+                  data-size="12">12px</a>
+                <a class="dropdown-item" onclick="fontSize(this)" style="font-size: 14px;" href="#"
+                  data-size="14">14px</a>
+                <a class="dropdown-item" onclick="fontSize(this)" style="font-size: 16px;" href="#"
+                  data-size="16">16px</a>
+                <a class="dropdown-item" onclick="fontSize(this)" style="font-size: 18px;" href="#"
+                  data-size="18">18px</a>
+                <a class="dropdown-item" onclick="fontSize(this)" style="font-size: 20px;" href="#"
+                  data-size="20">20px</a>
+                <a class="dropdown-item" onclick="fontSize(this)" style="font-size: 22px;" href="#"
+                  data-size="22">22px</a>
+                <a class="dropdown-item" onclick="fontSize(this)" style="font-size: 25px;" href="#"
+                  data-size="25">25px</a>
+                <a class="dropdown-item" onclick="fontSize(this)" style="font-size: 30px;" href="#"
+                  data-size="30">30px</a>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+              <i class="bi bi-palette-fill"></i>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Choose text color</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="block__color">
+                      <div class="color" onclick="textColor(this)" data-color-text="#0AA898"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#088F82"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#1FB56C"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#1A9A5E"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#2790DD"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#1F79B9"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#9A63B4"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#9A63B4"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#30475D"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#283D4E"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#F5BC06"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#F89A0C"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#ED811B"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#DB5B00"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#F25938"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#C84425"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#EAEEEF"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#BAC1C4"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#8FA1A2"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#7B898A"></div>
+                      <div class="color" onclick="textColor(this)" data-color-text="#000000"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--  -->
+
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleBackground">
+              <i class="bi bi-image-fill"></i>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleBackground" tabindex="-1" role="dialog" aria-labelledby="modalBakground"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalBakground">Choose background</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                          aria-controls="home" aria-selected="true">Colors</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                          aria-controls="profile" aria-selected="false">Image</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                          aria-controls="contact" aria-selected="false">Files</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="block__color">
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#0AA898"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#088F82"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#1FB56C"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#1A9A5E"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#2790DD"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#1F79B9"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#9A63B4"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#9A63B4"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#30475D"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#283D4E"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#F5BC06"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#F89A0C"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#ED811B"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#DB5B00"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#F25938"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#C84425"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#EAEEEF"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#BAC1C4"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#8FA1A2"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#7B898A"></div>
+                          <div class="color" onclick="colorBackground(this)" data-color-background="#000000"></div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="block__image">
+                          <img onclick="imageBackground(this)" src="img/first.jpg" alt="#" class="image">
+                          <img onclick="imageBackground(this)" src="img/second.jpg" alt="#" class="image">
+                          <img onclick="imageBackground(this)" src="img/third.jpg" alt="#" class="image">
+                          <img onclick="imageBackground(this)" src="img/fourth.png" alt="#" class="image">
+                          <img onclick="imageBackground(this)" src="img/fifth.jpg" alt="#" class="image">
+                          <img onclick="imageBackground(this)" src="img/sixth.jpg" alt="#" class="image">
+                          <img onclick="imageBackground(this)" src="img/seventh.jpg" alt="#" class="image">
+                          <img onclick="imageBackground(this)" src="img/eight.jpg" alt="#" class="image">
+                          <img onclick="imageBackground(this)" src="img/nineth.jpg" alt="#" class="image">
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <form>
+                          <div class="form-group">
+                            <input type='file' onchange="readURL(this);" />
+                               <img id="blah" src="#" alt="your image" />  
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-group" role="group" aria-label="Third group">
+
+            <!--  -->
+
+            <button type="button" id="lock" class="btn btn-secondary" data-toggle="modal"
+              data-target="#exampleBackground-first">
+              <i class="bi bi-lock-fill"></i>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleBackground-first" tabindex="-1" role="dialog"
+              aria-labelledby="modalBakground-first" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalBakground-first">Sign In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail-first"
+                          aria-describedby="emailHelp-first" placeholder="Enter email" value="">
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword-first"
+                          placeholder="Password" value="">
+                        <small id="emailHelp-first" class="form-text text-muted emailHelp">Please check your login or
+                          password</small>
+                        <small id="emailHelp-second" class="form-text text-muted emailHelp">input full</small>
+                      </div>
+                      <button type="submit" class="btn btn-secondary sign" id="signIn" >Sign
+                        In</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-group" role="group" aria-label="Third group">
+          </div>
+          <!-- modal -->
+
+
+
+          <!-- Modal -->
+          <button type="button" id="unlock" class="btn btn-secondary display" data-toggle="modal"
+            data-target="#exampleBackground-third">
+            <i class="bi bi-unlock-fill"></i>
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleBackground-third" tabindex="-1" role="dialog"
+            aria-labelledby="modalBakground-third" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalBakground-third">Sign Out</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="flex">
+                    <div class="block__left">
+                      <button type="button" onclick="cancel()" class="btn btn-dark">Cancel</button>
+                    </div>
+                    <div class="block__right">
+                      <button type="button" onclick="signOut()" class="btn btn-danger">Sign Out</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- tettt -->
+
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+  <main id="main">
+    <div class="text" id="text">
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+  </main>
+  <section id="section" class="display">
+    <div class="block__change">
+      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2  " role="group" aria-label="First group">
+          <button type="button" id="save" onclick="saveChanges()" class="btn btn-light">
+            <svg version="1.1" width="15px" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 384 384"
+              style="enable-background:new 0 0 384 384;" xml:space="preserve">
+              <g>
+                <g>
+                  <path d="M298.667,0h-256C19.093,0,0,19.093,0,42.667v298.667C0,364.907,19.093,384,42.667,384h298.667
+              C364.907,384,384,364.907,384,341.333v-256L298.667,0z M192,341.333c-35.307,0-64-28.693-64-64c0-35.307,28.693-64,64-64
+              s64,28.693,64,64C256,312.64,227.307,341.333,192,341.333z M256,128H42.667V42.667H256V128z" />
+                </g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+              <g>
+              </g>
+            </svg>
+          </button>
+          <!-- create table modal  -->
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#createTable">
+            <i class="bi bi-table"></i>
+          </button>
+          <div class="modal fade bd-example-modal-lg" id="createTable" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel-second" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel-second">Create table:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="flex">
+                    <div class="block__left">
+                      <label for="countTR">Count TR:</label>
+                      <input type="text" id="countTR">
+                      <br />
+                      <label for="widthTD">Width of TD:</label>
+                      <input type="text" id="widthTD">
+                      <br />
+                      <label for="widthBorder">Width of border:</label>
+                      <input type="text" id="widthBorder">
+                      <small class="form-text text-muted emailHelp" id="invalidTable">invalid value</small>
+
+                      <button class="btn btn-danger" id="resetModalTable" onclick="resetTableBlock()">Reset</button>
+                    </div>
+                    <div class="block__right">
+                      <label for="countTD">Count TD:</label>
+                      <input type="text" id="countTD">
+                      <br />
+                      <label for="heightTD">Height of TD:</label>
+                      <input type="text" id="heightTD">
+                      <br />
+                      <div class="flex">
+                        <div class="block__first">
+                          <label for="styleBorder">Style of border:</label>
+                          <select name="" id="styleBorder">
+                            <option value="solid">solid</option>
+                            <option value="dotted">dotted</option>
+                          </select>
+                        </div>
+                        <div class="block__second">
+                          <label for="colorBorder">Color of border:</label>
+                          <select name="" id="colorBorder">
+                            <option value="black">black</option>
+                            <option value="green">green</option>
+                            <option value="blue">blue</option>
+                          </select>
+                        </div>
+                      </div>
+                      <button class="btn btn-success" id="createTableFormat" onclick="checkRegexTable()">Create
+                        table</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- create ol list -->
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#createOl">
+            <i class="bi bi-list-ol"></i>
+          </button>
+          <div class="modal fade" id="createOl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-Ol"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel-Ol">Create Ol</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="flex">
+                    <div class="block__li">
+                      <label for="countLi">Count li item:</label>
+                      <input type="text" id="countLi">
+
+                      <label for="typeMark">Type mark of list:</label>
+                      <select id="typeMark">
+                        <option>Choose the typeMark</option>
+                        <option value="decimal">1</option>
+                        <option value="lower-alpha">a</option>
+                        <option value="upper-alpha">A</option>
+                        <option value="upper-roman">II</option>
+                      </select>
+                      <small id="invalidOl" class="form-text text-muted emailHelp">invalid value</small>
+                    </div>
+
+                  </div>
+                  <div class="flex">
+                    <div class="block__left input">
+                      <button class="btn btn-danger" onclick="resetOlBlock()">Reset</button>
+                    </div>
+                    <div class="block__right input">
+                      <button class="btn btn-success" onclick="checkRegexLi()">Create table</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- create ul list  -->
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#createUl">
+            <i class="bi bi-list-ul"></i>
+          </button>
+          <div class="modal fade" id="createUl" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-Ul"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel-Ul">Create Ul</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <div class="flex">
+                    <div class="block__li">
+                      <label for="countLi2">Count li item:</label>
+                      <input type="text" id="countLi2">
+
+                      <label for="typeMarks">Type mark of list:</label>
+                      <select id="typeMarks">
+                        <option>Choose the typeMark</option>
+                        <option value="circle">circle</option>
+                        <option value="disk">disk</option>
+                        <option value="square">square</option>
+                      </select>
+                      <small id="invalidUl" class="form-text text-muted emailHelp">invalid value</small>
+                    </div>
+
+                  </div>
+                  <div class="flex">
+                    <div class="block__left input">
+                      <button class="btn btn-danger" onclick="resetUlBlock()">Reset</button>
+                    </div>
+                    <div class="block__right input">
+                      <button class="btn btn-success" onclick="checkRegexLi2()">Create table</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer" class="display">
+    <textarea name="text" id="textarea" width="100%" height="100%"></textarea>
+  </footer>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
